@@ -3,10 +3,10 @@
     <nav id="nav" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img class="imagotipo" src="../assets/imagotipoHorizontalNegro.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-Header" aria-controls="#navbar-Header" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-Header" aria-controls="#navbar-Header" aria-expanded="false" aria-label="Toggle navigation" @click="collapseNavBar = !collapseNavBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbar-Header">
+            <div :class="collapseNavBar ? 'collapse' : ''" class="navbar-collapse" id="navbar-Header">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link active" href="#"><router-link to="/">HOME</router-link></a>
@@ -31,6 +31,11 @@
 <script>
 export default {
     name: "Header",
+    data() {
+        return {
+            collapseNavBar: true,
+        }
+    }
 };
 </script>
 
